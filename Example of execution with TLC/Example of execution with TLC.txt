@@ -1,0 +1,587 @@
+amina@DESKTOP-BTGAMHE:~/src$ java tlc.TLC A11.tla
+TLC Version 2.0 of January 16, 2006
+Model-checking
+Parsing file A11.tla
+Parsing file /home/amina/src/tlasany/StandardModules/Sequences.tla
+Parsing file /home/amina/src/tlasany/StandardModules/Naturals.tla
+Parsing file /home/amina/src/tlasany/StandardModules/TLC.tla
+Parsing file /home/amina/src/tlasany/StandardModules/FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module TLC
+Semantic processing of module FiniteSets
+Semantic processing of module A11
+Implied-temporal checking--satisfiability problem has 2 branches.
+Finished computing initial states: 1 distinct state generated.
+--Checking temporal properties for the complete state space...
+Error: Temporal properties were violated.
+The following behaviour constitutes a counter-example:
+
+STATE 1: <Initial predicate>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<<  >>, <<  >>, <<  >>>>
+/\ _stack = <<<<  >>, <<  >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> FALSE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "PubStart", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 2: <Action line 376, col 19 to line 381, col 155 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<< [sender |-> 2, type |-> "CONNECT"] >>, <<  >>, <<  >>>>
+/\ _stack = <<<<  >>, <<  >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> FALSE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "waitCONN", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 3: <Action line 286, col 17 to line 365, col 180 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<<  >>, << [sender |-> 1, type |-> "CONNACK"] >>, <<  >>>>
+/\ _stack = <<<<  >>, <<  >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> FALSE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "waitCONN", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 4: <Action line 383, col 19 to line 409, col 182 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<<  >>, <<  >>, <<  >>>>
+/\ _stack = <<<<  >>, <<  >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "tryPUBLISH", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 5: <Action line 411, col 21 to line 421, col 175 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<<  >>, <<  >>, <<  >>>>
+/\ _stack = <<<<  >>, <<  >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "tryPUB2", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 6: <Action line 465, col 18 to line 470, col 157 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<<  >>, <<  >>, <<  >>>>
+/\ _stack = <<<<  >>, << [_pc |-> "Done", PUBSUCC |-> FALSE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "cqos2", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 7: <Action line 98, col 16 to line 103, col 152 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = << << [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2] >>,
+   <<  >>,
+   <<  >> >>
+/\ _stack = <<<<  >>, << [_pc |-> "Done", PUBSUCC |-> FALSE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "waitPUB2", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 8: <Action line 286, col 17 to line 365, col 180 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<<  >>, <<  >>, <<  >>>>
+/\ _stack = <<<< [_pc |-> "listen", pkt |-> [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2], idS_sub |-> {}, sub |-> 0] >>, << [_pc |-> "Done", PUBSUCC |-> FALSE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"l1", "waitPUB2", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 9: <Action line 191, col 13 to line 209, col 176 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<<  >>, << [sender |-> 1, type |-> "PUBREC"] >>, <<  >>>>
+/\ _stack = <<<< [_pc |-> "listen", pkt |-> [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2], idS_sub |-> {}, sub |-> 0] >>, << [_pc |-> "Done", PUBSUCC |-> FALSE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {2}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "waitPUB2", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 10: <Action line 105, col 19 to line 119, col 173 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = << << [sender |-> 2, type |-> "PUBREL", topic |-> "A", QoS |-> 2] >>,
+   <<  >>,
+   <<  >> >>
+/\ _stack = <<<< [_pc |-> "listen", pkt |-> [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2], idS_sub |-> {}, sub |-> 0] >>, << [_pc |-> "Done", PUBSUCC |-> FALSE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {2}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "waitPUBCOMP2", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 11: <Action line 286, col 17 to line 365, col 180 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<<  >>, << [sender |-> 1, type |-> "PUBCOMP"] >>, <<  >>>>
+/\ _stack = <<<< [_pc |-> "listen", pkt |-> [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2], idS_sub |-> {}, sub |-> 0] >>, << [_pc |-> "Done", PUBSUCC |-> FALSE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "waitPUBCOMP2", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 12: <Action line 121, col 23 to line 150, col 186 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<<  >>, <<  >>, <<  >>>>
+/\ _stack = <<<< [_pc |-> "listen", pkt |-> [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2], idS_sub |-> {}, sub |-> 0] >>, << [_pc |-> "Done", PUBSUCC |-> TRUE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "Done", "Sub_start", "CONNECT">>
+/\ depth = 0
+
+STATE 13: <Action line 474, col 20 to line 479, col 156 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> FALSE,
+        INJ |-> FALSE,
+        pk |-> 1 ] )
+/\ cp = 99
+/\ network = <<<< [sender |-> 3, type |-> "CONNECT"] >>, <<  >>, <<  >>>>
+/\ _stack = <<<< [_pc |-> "listen", pkt |-> [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2], idS_sub |-> {}, sub |-> 0] >>, << [_pc |-> "Done", PUBSUCC |-> TRUE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "Done", "Sub_waitCONN", "CONNECT">>
+/\ depth = 0
+
+STATE 14: <Action line 562, col 18 to line 587, col 190 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> TRUE,
+        INJ |-> FALSE,
+        pk |-> 3 ] )
+/\ cp = 99
+/\ network = <<<< [sender |-> 3, type |-> "CONNECT"] >>, <<  >>, <<  >>>>
+/\ _stack = <<<< [_pc |-> "listen", pkt |-> [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2], idS_sub |-> {}, sub |-> 0] >>, << [_pc |-> "Done", PUBSUCC |-> TRUE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "Done", "Sub_waitCONN", "CONNACK">>
+/\ depth = 0
+
+STATE 15: <Action line 286, col 17 to line 365, col 180 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2, 3}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> TRUE,
+        INJ |-> FALSE,
+        pk |-> 3 ] )
+/\ cp = 99
+/\ network = <<<<  >>, <<  >>, << [sender |-> 1, type |-> "CONNACK"] >>>>
+/\ _stack = <<<< [_pc |-> "listen", pkt |-> [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2], idS_sub |-> {}, sub |-> 0] >>, << [_pc |-> "Done", PUBSUCC |-> TRUE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "Done", "Sub_waitCONN", "CONNACK">>
+/\ depth = 0
+
+STATE 16: <Action line 589, col 18 to line 612, col 190 of module A11>
+/\ _Subscriber_data = ( 3 :>
+      [ self |-> 3,
+        parentID |-> 0,
+        Name |-> "Subscriber",
+        rules |-> 0,
+        CONNSUCC |-> FALSE,
+        BrokerID |-> 1,
+        SUBSUCC |-> FALSE,
+        PUBRECE |-> FALSE ] )
+/\ activeClients = {2, 3}
+/\ TopicPool = [A |-> {}, B |-> {}, C |-> {}]
+/\ Topics = {"A", "B", "C"}
+/\ _attaque_data = ( 4 :>
+      [ self |-> 4,
+        parentID |-> 0,
+        Name |-> "attaque",
+        BrokerID |-> 1,
+        OBS |-> TRUE,
+        INJ |-> TRUE,
+        pk |-> 3 ] )
+/\ cp = 99
+/\ network = <<<<  >>, <<  >>, <<  >>>>
+/\ _stack = <<<< [_pc |-> "listen", pkt |-> [sender |-> 2, type |-> "PUBLISH", topic |-> "A", QoS |-> 2], idS_sub |-> {}, sub |-> 0] >>, << [_pc |-> "Done", PUBSUCC |-> TRUE, to |-> 1] >>, <<  >>, <<  >>>>
+/\ _Broker_data = <<[self |-> 1, parentID |-> 0, Name |-> "Broker", rules |-> 0, status |-> 0, statusRecord |-> 0, wait_REL |-> {}]>>
+/\ _Publisher_data = ( 2 :>
+      [ self |-> 2,
+        parentID |-> 0,
+        Name |-> "Publisher",
+        CONNSUCC |-> TRUE,
+        PUBSUCC |-> FALSE,
+        BrokerID |-> 1 ] )
+/\ _pc = <<"listen", "Done", "Sub_waitCONN", "Done">>
+/\ depth = 0
+
+STATE 17: Back to state 16.
+
+1297 states generated, 534 distinct states found, 0 states left on queue.
+Time elapsed: 3.481Second(s)
